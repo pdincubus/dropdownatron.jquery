@@ -1,0 +1,28 @@
+{
+  "name": "dropdownatron.jquery",
+  "main": "dropdownatron.jquery.js",
+  "version": "1.1",
+  "homepage": "https://github.com/rckt/dropdownatron.jquery",
+  "authors": [
+    "John Noel <john.noel@rckt.co.uk>",
+    "Phil Steer <phil.steer@rckt.co.uk>"
+  ],
+  "description": "Styled dropdowns using jquery",
+  "keywords": [
+    "dropdown",
+    "select",
+    "enhancement",
+    "jquery"
+  ],
+  "license": "Creative Commons Attribution-ShareAlike",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3"
+  }
+}
