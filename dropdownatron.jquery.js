@@ -39,8 +39,7 @@
         _build: function() {
             var that = this;
             this.$element.trigger('dropdownatron.pre_build');
-
-            this.$element.hide().wrap($('<div/>').addClass('dropdownatron-container'));
+            this.$element.addClass('visuallyhidden focusable').wrap($('<div/>').addClass('dropdownatron-container'));
 
             // because apparently wrap() obliterates any loosey references
             this.$container = this.$element.parent();
