@@ -1,7 +1,7 @@
 /**
  * Dropdownatron will convert a select box to something fancier
  *
- * @version 1.1
+ * @version 1.2
  * @author John Noel <john.noel@rckt.co.uk>
  * @author Phil Steer <phil.steer@rckt.co.uk>
  * @todo Keyboard shortcuts, focus styles (accessibility) etc.
@@ -39,7 +39,12 @@
         _build: function() {
             var that = this;
             this.$element.trigger('dropdownatron.pre_build');
-            this.$element.addClass('visuallyhidden focusable').wrap($('<div/>').addClass('dropdownatron-container'));
+
+            if ( this.options.keyboardAccess === true ) {
+                this.$element.addClass('visuallyhidden focusable').wrap($('<div/>').addClass('dropdownatron-container'));
+            } else {
+                this.$element.hide().wrap($('<div/>').addClass('dropdownatron-container'));
+            }
 
             // because apparently wrap() obliterates any loosey references
             this.$container = this.$element.parent();
@@ -228,6 +233,7 @@
     $.fn.dropdownatron.defaults = {
         speed: 250,
         easing: 'swing',
-        animation: 'animate' //or fade
+        animation: 'animate', //or fade
+        keyboardAccess: true  //expects you have HTML5bp 'visuallyhidden' & 'focusable' classes in your styles somewhere
     };
 }(window.jQuery);
